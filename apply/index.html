@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TDLCDL7T');</script>
+  <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply Now | German.lk</title>
@@ -15,6 +22,10 @@
 </head>
 
 <body class="bg-surface text-text">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDLCDL7T"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     <!-- NAVBAR -->
     <nav id="navbar"
         class="nav-glass fixed top-4 left-4 right-4 z-50 rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-300">
@@ -57,8 +68,7 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero" style="height:280px">
-        <img src="/inner-hero-bg.webp" alt="Apply Now"
-            class="page-hero-img">
+        <img src="/inner-hero-bg.webp" alt="Apply Now" class="page-hero-img">
         <div class="page-hero-overlay"></div>
         <div class="floating-card">
             <h1>Apply Now</h1>
@@ -533,6 +543,25 @@
                     form.reset();
                     alertSuccess.style.display = 'flex';
                     window.scrollTo({ top: document.querySelector('.content-layout').offsetTop - 100, behavior: 'smooth' });
+
+                    // Fire and forget welcome SMS via Supabase Edge Function
+                    if (supabaseUrl && supabaseKey) {
+                        try {
+                            const smsEndpoint = `${supabaseUrl}/functions/v1/welcome-sms`;
+                            fetch(smsEndpoint, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "Authorization": `Bearer ${supabaseKey}`
+                                },
+                                body: JSON.stringify({ mobile_number: formData.get('mobile_no') })
+                            }).then(res => res.json())
+                                .then(data => console.log('SMS Function Response:', data))
+                                .catch(err => console.error("SMS Edge Function network error:", err));
+                        } catch (smsErr) {
+                            console.error("SMS Edge Function setup error:", smsErr);
+                        }
+                    }
 
                 } catch (error) {
                     console.error("Frappe CRM Submission Error:", error);
