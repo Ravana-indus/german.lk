@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Assessment | Find Your Germany Pathway | German.lk</title>
+    <meta name="description"
+        content="Check your eligibility for Study in Germany, Chancenkarte (Job Seeker), Ausbildung, or Au Pair with our free 6-minute assessment.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="bg-surface text-text">
+    <!-- NAVBAR -->
+    <nav id="navbar"
+        class="nav-glass fixed top-4 left-4 right-4 z-50 rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-300">
+        <a href="/" class="font-heading font-bold text-xl text-white tracking-tight">German<span
+                class="text-secondary">.lk</span></a>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="/study-in-germany/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Study</a>
+            <a href="/chancenkarte/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Chancenkarte</a>
+            <a href="/ausbildung/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Ausbildung</a>
+            <a href="/au-pair/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Au
+                Pair</a>
+            <a href="/packages/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Packages</a>
+            <a href="/assessment/" class="btn-primary !py-2.5 !px-5 !text-sm">Free Assessment</a>
+        </div>
+        <button id="mobile-toggle" class="md:hidden text-white cursor-pointer" aria-label="Open menu"><svg width="24"
+                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg></button>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+        <button id="mobile-close" class="absolute top-6 right-6 text-white cursor-pointer" aria-label="Close menu"><svg
+                width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg></button>
+        <a href="/study-in-germany/">Study</a><a href="/chancenkarte/">Chancenkarte</a><a
+            href="/ausbildung/">Ausbildung</a><a href="/au-pair/">Au Pair</a><a href="/packages/">Packages</a><a
+            href="/about/">About</a><a href="/contact/">Contact</a>
+        <a href="/assessment/" class="btn-primary mt-4">Free Assessment</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" style="height:280px">
+        <img src="/inner-hero-bg.webp"
+            alt="Assessment" class="page-hero-img">
+        <div class="page-hero-overlay"></div>
+        <div class="floating-card">
+            <h1>Free Assessment</h1>
+            <p>Find your optimal Germany pathway in under 6 minutes. Select your current status to get started.</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="content-layout">
+        <main class="content-main">
+            <!-- WIZARD UI -->
+            <div class="assessment-wizard">
+                <div class="wizard-header">
+                    <div class="flex justify-between items-end mb-1">
+                        <span class="text-sm font-medium text-white/70 tracking-widest uppercase">Your Profile
+                            Match</span>
+                        <span id="wizard-progress-text" class="text-sm font-bold text-secondary">Step 1 of 6</span>
+                    </div>
+                    <div class="wizard-progress-bar">
+                        <div id="wizard-progress-fill" class="wizard-progress-fill" style="width: 16.6%;"></div>
+                    </div>
+                </div>
+
+                <form id="assessment-form" onsubmit="event.preventDefault();">
+                    <div class="wizard-body">
+
+                        <!-- Step 1: Education -->
+                        <div class="assessment-step active" id="step-1">
+                            <h3>What is your highest educational qualification?</h3>
+                            <p>This helps us determine academic or vocational eligibility.</p>
+                            <div class="wizard-options">
+                                <label class="wizard-option">
+                                    <input type="radio" name="education" value="masters" required>
+                                    <span>Master's Degree or PhD</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="education" value="bachelors">
+                                    <span>Bachelor's Degree</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="education" value="diploma">
+                                    <span>Higher National Diploma / NVQ</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="education" value="al">
+                                    <span>A/Level Completed</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="education" value="ol">
+                                    <span>O/Level Completed</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Age -->
+                        <div class="assessment-step" id="step-2">
+                            <h3>How old are you?</h3>
+                            <p>Certain visas and programs have strict age requirements.</p>
+                            <div class="wizard-options">
+                                <label class="wizard-option">
+                                    <input type="radio" name="age" value="under_18" required>
+                                    <span>Under 18</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="age" value="18_24">
+                                    <span>18 - 24 years</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="age" value="25_30">
+                                    <span>25 - 30 years</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="age" value="31_35">
+                                    <span>31 - 35 years</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="age" value="over_35">
+                                    <span>Over 35</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Language -->
+                        <div class="assessment-step" id="step-3">
+                            <h3>What is your proficiency in German?</h3>
+                            <p>Language skills greatly improve success across all pathways.</p>
+                            <div class="wizard-options">
+                                <label class="wizard-option">
+                                    <input type="radio" name="german" value="none" required>
+                                    <span>No German knowledge</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="german" value="a1_a2">
+                                    <span>Beginner (A1/A2 level)</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="german" value="b1_b2">
+                                    <span>Intermediate (B1/B2 level)</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="german" value="c1_c2">
+                                    <span>Advanced (C1+ / Native)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Experience -->
+                        <div class="assessment-step" id="step-4">
+                            <h3>How many years of relevant work experience do you have?</h3>
+                            <p>Crucial for the Chancenkarte (Job Seeker) visa.</p>
+                            <div class="wizard-options">
+                                <label class="wizard-option">
+                                    <input type="radio" name="experience" value="none" required>
+                                    <span>None / Still studying</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="experience" value="under_2">
+                                    <span>Less than 2 years</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="experience" value="2_5">
+                                    <span>2 - 5 years</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="experience" value="over_5">
+                                    <span>More than 5 years</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Budget -->
+                        <div class="assessment-step" id="step-5">
+                            <h3>What is your estimated funding capacity?</h3>
+                            <p>Germany requires proof of funds (Blocked Account) for many visas.</p>
+                            <div class="wizard-options">
+                                <label class="wizard-option">
+                                    <input type="radio" name="budget" value="low" required>
+                                    <span>Less than LKR 2.5M</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="budget" value="medium">
+                                    <span>LKR 2.5M - 4.5M</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="budget" value="high">
+                                    <span>Over LKR 4.5M</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 6: IELTS -->
+                        <div class="assessment-step" id="step-6">
+                            <h3>Do you have an IELTS score of 6.0 or equivalent?</h3>
+                            <p>English proficiency is often required for English-taught university programs in Germany.
+                            </p>
+                            <div class="wizard-options">
+                                <label class="wizard-option">
+                                    <input type="radio" name="ielts" value="yes" required>
+                                    <span>Yes, I have 6.0 or better</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="ielts" value="can_get">
+                                    <span>No, but I can achieve it</span>
+                                </label>
+                                <label class="wizard-option">
+                                    <input type="radio" name="ielts" value="no">
+                                    <span>No, and I cannot achieve it</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Result Step -->
+                        <div class="assessment-step" id="step-result">
+                            <div class="result-card">
+                                <div
+                                    class="w-16 h-16 mx-auto mb-4 rounded-full bg-surface border border-border flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-secondary" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                </div>
+                                <h3>Assessment Complete!</h3>
+                                <p class="mb-6">Based on your profile, you are eligible for the following pathways.
+                                    Select one to proceed with your application.</p>
+
+                                <div id="recommended-pathways-container" class="flex flex-col gap-4 w-full">
+                                    <!-- Dynamic content inserted here via JS -->
+                                </div>
+                                <div class="mt-4">
+                                    <button type="button" class="btn-secondary-dark !py-2 !px-4 !text-sm"
+                                        onclick="location.reload()">Take Assessment Again</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-footer" id="wizard-footer">
+                            <button type="button" class="btn-secondary-dark" id="btn-prev" disabled>Back</button>
+                            <button type="button" class="btn-primary" id="btn-next">Next Step</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- FAQ -->
+            <h2 class="mt-16">Assessment FAQ</h2>
+            <div class="space-y-3 mb-8">
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Is my assessment data
+                            stored?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></button>
+                    <div class="faq-answer">
+                        <p>This quick eligibility test runs directly in your browser and does not store your personal
+                            information unless you proceed to the application step.</p>
+                    </div>
+                </div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>What happens after I get
+                            a recommendation?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></button>
+                    <div class="faq-answer">
+                        <p>You will be directed to our Apply page, where you'll fill out a formal registration that
+                            enters your profile into our CRM. A consultant will then follow up with you directly.</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-card cta-card">
+                <h4>Already decided?</h4>
+                <p>If you already know your ideal pathway, you can skip the assessment.</p>
+                <a href="/apply/" class="btn-primary w-full !text-sm mt-3">Apply Now</a>
+            </div>
+            <div class="sidebar-card">
+                <h4>Trust & Transparency</h4>
+                <ul class="space-y-3 text-sm text-text/80 pt-2">
+                    <li class="flex gap-2 items-start"><svg class="w-5 h-5 text-secondary shrink-0" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg> 99% Success Rate</li>
+                    <li class="flex gap-2 items-start"><svg class="w-5 h-5 text-secondary shrink-0" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg> Contract-First Process</li>
+                    <li class="flex gap-2 items-start"><svg class="w-5 h-5 text-secondary shrink-0" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg> Invoices Only</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white/60 py-14 px-4 mt-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-10 mb-10">
+                <div><a href="/" class="font-heading font-bold text-xl text-white tracking-tight">German<span
+                            class="text-secondary">.lk</span></a>
+                    <p class="text-sm mt-3 leading-relaxed">Sri Lanka's premier Germany pathway consultant.
+                        Contract-first, invoice-only, portal-tracked.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-white text-sm mb-4">Pathways</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/study-in-germany/" class="hover:text-secondary transition-colors">Study in
+                                Germany</a></li>
+                        <li><a href="/chancenkarte/" class="hover:text-secondary transition-colors">Chancenkarte</a>
+                        </li>
+                        <li><a href="/ausbildung/" class="hover:text-secondary transition-colors">Ausbildung</a></li>
+                        <li><a href="/au-pair/" class="hover:text-secondary transition-colors">Au Pair</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-white text-sm mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about/" class="hover:text-secondary transition-colors">About</a></li>
+                        <li><a href="/packages/" class="hover:text-secondary transition-colors">Packages</a></li>
+                        <li><a href="/contact/" class="hover:text-secondary transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-white text-sm mb-4">Get Started</h4><a
+                        href="/assessment/" class="btn-primary !py-2.5 !px-5 !text-sm mb-4">Free Assessment</a>
+                    <p class="text-xs mt-4">Germany-focused on German.lk.</p>
+                </div>
+            </div>
+            <div class="german-stripe rounded-full mb-6"></div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 German.lk. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Assessment Logic Script (Inline for Wizard uniqueness) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentStep = 1;
+            const totalSteps = 6;
+
+            const nextBtn = document.getElementById('btn-next');
+            const prevBtn = document.getElementById('btn-prev');
+            const progressFill = document.getElementById('wizard-progress-fill');
+            const progressText = document.getElementById('wizard-progress-text');
+            const footer = document.getElementById('wizard-footer');
+
+            // Advance/Back Functions
+            const showStep = (step) => {
+                document.querySelectorAll('.assessment-step').forEach(el => el.classList.remove('active'));
+                document.getElementById(`step-${step}`).classList.add('active');
+
+                // Update Progress UI
+                const p = (step / totalSteps) * 100;
+                progressFill.style.width = `${p}%`;
+                progressText.textContent = `Step ${step} of ${totalSteps}`;
+
+                prevBtn.disabled = step === 1;
+
+                if (step === totalSteps) {
+                    nextBtn.textContent = 'See Results';
+                } else {
+                    nextBtn.textContent = 'Next Step';
+                }
+            };
+
+            const calculateResult = () => {
+                const ed = document.querySelector('input[name="education"]:checked')?.value || 'ol';
+                const age = document.querySelector('input[name="age"]:checked')?.value || '18_24';
+                const ger = document.querySelector('input[name="german"]:checked')?.value || 'none';
+                const exp = document.querySelector('input[name="experience"]:checked')?.value || 'none';
+                const bud = document.querySelector('input[name="budget"]:checked')?.value || 'low';
+                const ielts = document.querySelector('input[name="ielts"]:checked')?.value || 'no';
+
+                let pathways = [];
+
+                // Study in Germany (Bachelors/Masters mostly, or AL for bachelor prep)
+                if (['masters', 'bachelors', 'al'].includes(ed)) {
+                    if (['high', 'medium'].includes(bud) || ['yes', 'can_get'].includes(ielts)) {
+                        pathways.push({ id: 'study', name: 'Study in Germany', desc: 'Pursue your higher education with world-class universities.' });
+                    }
+                }
+
+                // Chancenkarte (Job Seeker) (Degree/Diploma + Experience + Age)
+                if (['masters', 'bachelors', 'diploma'].includes(ed)) {
+                    if (['2_5', 'over_5'].includes(exp)) {
+                        pathways.push({ id: 'chancenkarte', name: 'Chancenkarte (Job Seeker)', desc: 'Move to Germany to look for employment securely.' });
+                    }
+                }
+
+                // Ausbildung (Vocational)
+                if (['al', 'ol', 'diploma'].includes(ed)) {
+                    if (age !== 'over_35') {
+                        pathways.push({ id: 'ausbildung', name: 'Ausbildung (Vocational)', desc: 'Earn a salary while you learn in a specialized trade.' });
+                    }
+                }
+
+                // Au Pair Eligibility
+                if (['under_18', '18_24', '25_30'].includes(age)) {
+                    if (bud === 'low' || ['a1_a2', 'b1_b2'].includes(ger)) {
+                        pathways.push({ id: 'aupair', name: 'Au Pair in Germany', desc: 'Experience German culture by assisting a host family.' });
+                    }
+                }
+
+                // Fallback if strict rules missed
+                if (pathways.length === 0) {
+                    pathways.push({ id: 'study', name: 'Premium Consultation', desc: 'Speak to our experts to find a bespoke pathway for your unique profile.' });
+                }
+
+                const container = document.getElementById('recommended-pathways-container');
+                container.innerHTML = pathways.map(p => `
+                    <div class="p-5 border border-border/80 rounded-2xl bg-surface text-left flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all hover:border-secondary/50 shadow-sm">
+                        <div>
+                            <h4 class="text-lg font-bold text-text mb-1 font-heading">${p.name}</h4>
+                            <p class="text-sm text-text/80">${p.desc}</p>
+                        </div>
+                        <a href="/apply/?pathway=${p.id}" class="btn-primary shrink-0 !py-2.5 !px-5 !text-sm text-center">Apply Now</a>
+                    </div>
+                `).join('');
+            };
+
+            const showResultScreen = () => {
+                calculateResult();
+                document.querySelectorAll('.assessment-step').forEach(el => el.classList.remove('active'));
+                document.getElementById('step-result').classList.add('active');
+
+                progressFill.style.width = `100%`;
+                progressText.textContent = `Completed`;
+                progressText.style.color = '#1A8A3F';
+
+                footer.style.display = 'none'; // Hide buttons on result page
+            };
+
+            nextBtn.addEventListener('click', () => {
+                // Must select option to proceed
+                const currentContainer = document.getElementById(`step-${currentStep}`);
+                const checked = currentContainer.querySelector('input[type="radio"]:checked');
+                if (!checked) {
+                    currentContainer.classList.add('shake');
+                    setTimeout(() => currentContainer.classList.remove('shake'), 400);
+                    return;
+                }
+
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                } else if (currentStep === totalSteps) {
+                    showResultScreen();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 1) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
+            });
+
+            // Quick advance on radio select
+            document.querySelectorAll('.wizard-option input').forEach(input => {
+                input.addEventListener('change', () => {
+                    // Small delay for UI feedback before jumping to next step
+                    setTimeout(() => {
+                        if (currentStep < totalSteps) {
+                            currentStep++;
+                            showStep(currentStep);
+                        } else {
+                            showResultScreen();
+                        }
+                    }, 350);
+                });
+            });
+        });
+    </script>
+    <style>
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-5px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(5px);
+            }
+        }
+
+        .shake {
+            animation: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
+        }
+    </style>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

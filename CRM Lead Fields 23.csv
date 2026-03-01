@@ -1,0 +1,122 @@
+Bulk Edit Fields;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Is System Generated;Label;Type;Name;Non Negative;Mandatory;Unique;Is Virtual;In List View;In Standard Filter;In Global Search;In Preview;Bold;No Copy;Allow in Quick Entry;Translatable;Link Filters;Default;Precision;Length;Options;Sort Options;Fetch From;Fetch on Save if Empty;Show Dashboard;Depends On;Perm Level;Hidden;Read Only;Collapsible;Allow Bulk Edit;Collapsible Depends On;Ignore User Permissions;Allow on Submit;Report Hide;Remember Last Selected Value;Hide Border;Ignore XSS Filter;Mandatory Depends On;Read Only Depends On;In Filter;Hide Seconds;Hide Days;Description;Placeholder;Print Hide;Print Hide If No Value;Print Width;Columns;Width;Is Custom Field
+is_system_generated;label;fieldtype;fieldname;non_negative;reqd;unique;is_virtual;in_list_view;in_standard_filter;in_global_search;in_preview;bold;no_copy;allow_in_quick_entry;translatable;link_filters;default;precision;length;options;sort_options;fetch_from;fetch_if_empty;show_dashboard;depends_on;permlevel;hidden;read_only;collapsible;allow_bulk_edit;collapsible_depends_on;ignore_user_permissions;allow_on_submit;report_hide;remember_last_selected_value;hide_border;ignore_xss_filter;mandatory_depends_on;read_only_depends_on;in_filter;hide_seconds;hide_days;description;placeholder;print_hide;print_hide_if_no_value;print_width;columns;width;is_custom_field
+ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;Set non-standard precision for a Float or Currency field ; ;"For Links, enter the DocType as range.
+For Select, enter list of Options, each on a new line. "; ; ;If unchecked, the value will always be re-fetched on save. ; ;"This field will appear only if the fieldname defined here has value OR the rules are true (examples):
+myfield
+eval:doc.myfield=='My Value'
+eval:doc.age>18"; ; ; ; ; ; ; ; ; ; ; ;Don't encode HTML tags like <script> or just characters like < or >, as they could be intentionally used in this field ; ; ; ; ; ; ; ; ; ;Print Width of the field, if the field is a column in a table ;Number of columns for a field in a Grid (Total Columns in a grid should be less than 11); ; 
+The CSV format is case sensitive;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Do not edit headers which are preset in the template;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+------;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Source;Link;source;;;;;;;;;;;;;;;;;CRM Lead Source;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Lead Owner;Link;lead_owner;;;;;;;;;;;;;;;;;User;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Person;Tab Break;person_tab;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Salutation;Link;salutation;;;;;;;;;;;;;;;;;Salutation;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;First Name;Data;first_name;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Last Name;Data;last_name;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Email;Data;email;;;;;;;;;;;;;;;;;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Mobile No.;Data;mobile_no;;;;;;;;;;;;;;;;;Phone;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Address ;Small Text;custom_address_;;;;;;;;;;;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;City;Data;custom_city;;;;;;;;;;;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Facebook Lead ID;Data;facebook_lead_id;;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Country Selection;Select;custom_country_selection;;;;;;;;;;;;1;;;;;"Germany
+Canada
+Australia
+UK
+New Zealand";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Pathway;Select;custom_pathway;;;;;;;;;;;;1;;;;;"Student
+Job Seeking
+Au Pair
+Ausbildung";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Chosen Package;Select;custom_chosen_package;;;;;;;;;;;;1;;;;;"DIY
+Plus
+Pro";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Eligibility ;Select;custom_eligibility_;;;;;;;;;;;;1;;;;;"Yes
+No
+Conditional";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Preferred Language of Communication;Select;custom_preferred_language_of_communication;;;;;;;;;;;;1;;;;;"Tamil
+Sinhala
+English";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Qualifications;Section Break;custom_qualifications;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Do you have 3 passes in A Level in one sitting;Select;custom_do_you_have_3_passes_in_a_level_in_one_sitting;;;;;;;;;;;;1;;;;;"Yes
+No
+Pending Results";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Do you have a degree?;Select;custom_do_you_have_a_degree;;;;;;;;;;;;1;;;;;"Yes
+No
+Pending Transcript";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Do you have a GPA of 2.8 or above or Second Class Upper?;Select;custom_do_you_have_a_gpa_of_28_or_above_or_second_class_upper;;;;;;;;;;;;1;;;;;"Yes
+No
+Pending Transcript ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Do you have IELTS 6.0 or above / can archive 6.0?;Select;custom_do_you_have_ielts_60_or_above__can_archive_60;;;;;;;;;;;;1;;;;;"Yes have 6.0 or better
+No but can get
+No can't get";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Do you have German Language?;Select;custom_do_you_have_german_language;;;;;;;;;;;;1;;;;;"Yes
+No";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;CV;Attach;custom_cv;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Transcript;Attach;custom_transcript;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1
+;Other Documents;Attach;custom_other_documents;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1

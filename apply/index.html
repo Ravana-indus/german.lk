@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | German.lk</title>
+    <meta name="description" content="Submit your application profile to German.lk and start your Germany pathway.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="bg-surface text-text">
+    <!-- NAVBAR -->
+    <nav id="navbar"
+        class="nav-glass fixed top-4 left-4 right-4 z-50 rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-300">
+        <a href="/" class="font-heading font-bold text-xl text-white tracking-tight">German<span
+                class="text-secondary">.lk</span></a>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="/study-in-germany/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Study</a>
+            <a href="/chancenkarte/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Chancenkarte</a>
+            <a href="/ausbildung/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Ausbildung</a>
+            <a href="/au-pair/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Au
+                Pair</a>
+            <a href="/packages/"
+                class="text-white/70 hover:text-secondary text-sm font-medium transition-colors duration-200">Packages</a>
+            <a href="/assessment/" class="btn-primary !py-2.5 !px-5 !text-sm">Free Assessment</a>
+        </div>
+        <button id="mobile-toggle" class="md:hidden text-white cursor-pointer" aria-label="Open menu"><svg width="24"
+                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg></button>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+        <button id="mobile-close" class="absolute top-6 right-6 text-white cursor-pointer" aria-label="Close menu"><svg
+                width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg></button>
+        <a href="/study-in-germany/">Study</a><a href="/chancenkarte/">Chancenkarte</a><a
+            href="/ausbildung/">Ausbildung</a><a href="/au-pair/">Au Pair</a><a href="/packages/">Packages</a><a
+            href="/about/">About</a><a href="/contact/">Contact</a>
+        <a href="/assessment/" class="btn-primary mt-4">Free Assessment</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" style="height:280px">
+        <img src="/inner-hero-bg.webp" alt="Apply Now"
+            class="page-hero-img">
+        <div class="page-hero-overlay"></div>
+        <div class="floating-card">
+            <h1>Apply Now</h1>
+            <p>Ready to start your journey? Submit your details below and our consultants will reach out with the next
+                steps.</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="content-layout">
+        <main class="content-main">
+            <!-- ALERTS -->
+            <div id="form-alert-success" class="form-alert success" style="display: none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <div>
+                    <strong>Application Submitted Successfully!</strong>
+                    <p class="text-sm mt-1">Thank you. Your profile has been created in our system. A consultant will
+                        contact you via WhatsApp or email shortly.</p>
+                </div>
+            </div>
+
+            <div id="form-alert-error" class="form-alert error" style="display: none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+                <div>
+                    <strong>Connection Error</strong>
+                    <p class="text-sm mt-1" id="error-message-text">There was a problem submitting your application.
+                        Please try again or contact us via WhatsApp.</p>
+                </div>
+            </div>
+
+            <!-- FORM -->
+            <form id="apply-form">
+
+                <!-- Section: Personal Info -->
+                <div class="apply-form-section">
+                    <h3>Personal Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="first_name">First Name <span
+                                    class="required">*</span></label>
+                            <input type="text" id="first_name" name="first_name" class="form-input" required
+                                placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="last_name">Last Name <span class="required">*</span></label>
+                            <input type="text" id="last_name" name="last_name" class="form-input" required
+                                placeholder="Doe">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="mobile_no">WhatsApp Number <span
+                                    class="required">*</span></label>
+                            <input type="tel" id="mobile_no" name="mobile_no" class="form-input" required
+                                placeholder="+94 7X XXX XXXX">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="custom_address_">Address</label>
+                            <input type="text" id="custom_address_" name="custom_address_" class="form-input"
+                                placeholder="Street address">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="custom_city">City</label>
+                            <input type="text" id="custom_city" name="custom_city" class="form-input"
+                                placeholder="Colombo">
+                        </div>
+                        <div class="form-group form-col-span-2">
+                            <label class="form-label" for="custom_preferred_language_of_communication">Preferred
+                                Language of Communication <span class="required">*</span></label>
+                            <select id="custom_preferred_language_of_communication"
+                                name="custom_preferred_language_of_communication" class="form-input form-select"
+                                required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="English">English</option>
+                                <option value="Sinhala">Sinhala</option>
+                                <option value="Tamil">Tamil</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Pathway -->
+                <div class="apply-form-section">
+                    <h3>Your Profile & Pathway</h3>
+                    <div class="form-grid">
+                        <div class="form-group form-col-span-2">
+                            <label class="form-label" for="custom_pathway">Select Pathway <span
+                                    class="required">*</span></label>
+                            <select id="custom_pathway" name="custom_pathway" class="form-input form-select" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Student">Study in Germany (Student)</option>
+                                <option value="Job Seeking">Chancenkarte (Job Seeking)</option>
+                                <option value="Ausbildung">Ausbildung (Vocational)</option>
+                                <option value="Au Pair">Au Pair</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="custom_do_you_have_a_degree">Do you have a degree? <span
+                                    class="required">*</span></label>
+                            <select id="custom_do_you_have_a_degree" name="custom_do_you_have_a_degree"
+                                class="form-input form-select" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="Pending Transcript">Pending Transcript</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label"
+                                for="custom_do_you_have_3_passes_in_a_level_in_one_sitting">A/Level: 3 Passes in one
+                                sitting? <span class="required">*</span></label>
+                            <select id="custom_do_you_have_3_passes_in_a_level_in_one_sitting"
+                                name="custom_do_you_have_3_passes_in_a_level_in_one_sitting"
+                                class="form-input form-select" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="Pending Results">Pending Results</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label"
+                                for="custom_do_you_have_a_gpa_of_28_or_above_or_second_class_upper">GPA 2.8+ or Second
+                                Class Upper? <span class="required">*</span></label>
+                            <select id="custom_do_you_have_a_gpa_of_28_or_above_or_second_class_upper"
+                                name="custom_do_you_have_a_gpa_of_28_or_above_or_second_class_upper"
+                                class="form-input form-select" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="Pending Transcript ">Pending Transcript</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="custom_do_you_have_german_language">Do you know German? <span
+                                    class="required">*</span></label>
+                            <select id="custom_do_you_have_german_language" name="custom_do_you_have_german_language"
+                                class="form-input form-select" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="custom_do_you_have_ielts_60_or_above__can_archive_60">IELTS
+                                6.0+ (Or equivalent)? <span class="required">*</span></label>
+                            <select id="custom_do_you_have_ielts_60_or_above__can_archive_60"
+                                name="custom_do_you_have_ielts_60_or_above__can_archive_60"
+                                class="form-input form-select" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Yes have 6.0 or better">Yes have 6.0 or better</option>
+                                <option value="No but can get">No but can get</option>
+                                <option value="No can't get">No can't get</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="custom_funding_capacity">Estimated Funding Capacity <span
+                                    class="required">*</span></label>
+                            <select id="custom_funding_capacity" name="custom_funding_capacity"
+                                class="form-input form-select" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Less than 1.5 Million LKR">Less than 1.5 Million LKR</option>
+                                <option value="LKR 1.5M - 2.5M">LKR 1.5M - 2.5M</option>
+                                <option value="LKR 2.5M - 4.5M">LKR 2.5M - 4.5M</option>
+                                <option value="LKR 4.5M - 8M">LKR 4.5M - 8M</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Documents -->
+                <div class="apply-form-section">
+                    <h3>Documents Upload</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="custom_cv">CV / Resume <span
+                                    class="required">*</span></label>
+                            <input type="file" id="custom_cv" name="custom_cv" class="form-input" required
+                                accept=".pdf,.doc,.docx">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="custom_transcript">Transcript / Certificates</label>
+                            <input type="file" id="custom_transcript" name="custom_transcript" class="form-input"
+                                accept=".pdf,.jpg,.jpeg,.png">
+                        </div>
+                        <div class="form-group form-col-span-2">
+                            <label class="form-label" for="custom_other_documents">Other Documents</label>
+                            <input type="file" id="custom_other_documents" name="custom_other_documents"
+                                class="form-input" accept=".pdf,.jpg,.jpeg,.png,.zip" multiple>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Details -->
+                <div class="apply-form-section">
+                    <h3>Additional Details</h3>
+                    <div class="form-group">
+                        <label class="form-label" for="notes">Message or Special Requests</label>
+                        <textarea id="notes" name="notes" class="form-input"
+                            placeholder="Any specific requirements, questions, or details about your academic/work history..."></textarea>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 mt-8 mb-16">
+                    <button type="submit" id="submit-btn" class="btn-primary">
+                        <span>Submit Application</span>
+                        <svg id="submit-spinner" class="animate-spin hidden w-5 h-5 ml-2"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                    </button>
+                    <p class="text-xs text-muted max-w-xs">By submitting, you agree to being contacted regarding this
+                        application.</p>
+                </div>
+            </form>
+
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h4>What Happens Next?</h4>
+                <ul class="space-y-4 text-sm text-text/80 pt-2">
+                    <li class="flex gap-3">
+                        <div
+                            class="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-xs shrink-0">
+                            1</div>
+                        <div>
+                            <strong class="text-primary block font-heading mb-1">Profile Review</strong>
+                            We immediately receive your application in our CRM securely.
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <div
+                            class="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-xs shrink-0">
+                            2</div>
+                        <div>
+                            <strong class="text-primary block font-heading mb-1">Consultant Contact</strong>
+                            An expert reach out via WhatsApp/Phone within 24 hours.
+                        </div>
+                    </li>
+                    <li class="flex gap-3">
+                        <div
+                            class="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-xs shrink-0">
+                            3</div>
+                        <div>
+                            <strong class="text-primary block font-heading mb-1">Client Portal</strong>
+                            You'll get an invite to start tracking your pathway checklist.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card text-center bg-surface-alt border-none mt-6">
+                <svg class="w-10 h-10 text-secondary mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <h4 class="mb-2">Need Urgent Help?</h4>
+                <p class="text-sm text-muted mb-4">Message us directly on WhatsApp instead.</p>
+                <a href="/contact/" class="btn-secondary-dark !w-full justify-center !text-sm">Contact Support</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white/60 py-14 px-4 mt-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-10 mb-10">
+                <div><a href="/" class="font-heading font-bold text-xl text-white tracking-tight">German<span
+                            class="text-secondary">.lk</span></a>
+                    <p class="text-sm mt-3 leading-relaxed">Sri Lanka's premier Germany pathway consultant.
+                        Contract-first, invoice-only, portal-tracked.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-white text-sm mb-4">Pathways</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/study-in-germany/" class="hover:text-secondary transition-colors">Study in
+                                Germany</a></li>
+                        <li><a href="/chancenkarte/" class="hover:text-secondary transition-colors">Chancenkarte</a>
+                        </li>
+                        <li><a href="/ausbildung/" class="hover:text-secondary transition-colors">Ausbildung</a></li>
+                        <li><a href="/au-pair/" class="hover:text-secondary transition-colors">Au Pair</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-white text-sm mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about/" class="hover:text-secondary transition-colors">About</a></li>
+                        <li><a href="/packages/" class="hover:text-secondary transition-colors">Packages</a></li>
+                        <li><a href="/contact/" class="hover:text-secondary transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-white text-sm mb-4">Get Started</h4><a
+                        href="/assessment/" class="btn-primary !py-2.5 !px-5 !text-sm mb-4">Free Assessment</a>
+                    <p class="text-xs mt-4">Germany-focused on German.lk.</p>
+                </div>
+            </div>
+            <div class="german-stripe rounded-full mb-6"></div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 German.lk. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Submit Logic (Frappe CRM Integration and Supabase Storage) -->
+    <script type="module">
+        import { createClient } from '@supabase/supabase-js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // -- PRE-FILL PATHWAY FROM URL PARAMETER --
+            const urlParams = new URLSearchParams(window.location.search);
+            const pathwayParam = urlParams.get('pathway');
+            const selectEl = document.getElementById('custom_pathway');
+
+            if (pathwayParam) {
+                const map = {
+                    'study': 'Student',
+                    'chancenkarte': 'Job Seeking',
+                    'ausbildung': 'Ausbildung',
+                    'aupair': 'Au Pair'
+                };
+                if (map[pathwayParam.toLowerCase()]) {
+                    selectEl.value = map[pathwayParam.toLowerCase()];
+                }
+            }
+
+            // -- FRAPPE CRM INTEGRATION CONFIG --
+            // We use the provided Cloudflare worker which handles CORS and Frappe Auth securely
+            const FRAPPE_API_URL = "https://frappe-lead-worker.divine-cell-37a1.workers.dev";
+            const API_KEY = "";
+            const API_SECRET = "";
+
+            const USE_API_AUTH = false;
+
+            const form = document.getElementById('apply-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const spinner = document.getElementById('submit-spinner');
+            const alertSuccess = document.getElementById('form-alert-success');
+            const alertError = document.getElementById('form-alert-error');
+            const errorText = document.getElementById('error-message-text');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // UI State
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                spinner.classList.remove('hidden');
+                alertSuccess.style.display = 'none';
+                alertError.style.display = 'none';
+
+                // Gather data
+                const formData = new FormData(form);
+
+                // Initialize Supabase Client for file uploads
+                const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+                const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+                const supabase = (supabaseUrl && supabaseKey) ? createClient(supabaseUrl, supabaseKey) : null;
+
+                // Helper to upload file to Supabase and return public URL
+                const uploadToSupabase = async (file, prefix) => {
+                    if (!supabase || !file || file.size === 0) return null;
+
+                    const fileExt = file.name.split('.').pop();
+                    const fileName = `${prefix}_${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+
+                    const { data, error } = await supabase.storage.from('leads').upload(fileName, file);
+
+                    if (error) {
+                        console.error(`Supabase upload error for ${prefix}:`, error);
+                        return null;
+                    }
+
+                    const { data: publicUrlData } = supabase.storage.from('leads').getPublicUrl(fileName);
+                    return publicUrlData.publicUrl;
+                };
+
+                let cvUrl = null;
+                let transcriptUrl = null;
+                let otherDocsUrls = [];
+
+                try {
+                    // Upload CV
+                    const cvFile = formData.get('custom_cv');
+                    cvUrl = await uploadToSupabase(cvFile, 'cv');
+
+                    // Upload Transcript
+                    const transFile = formData.get('custom_transcript');
+                    transcriptUrl = await uploadToSupabase(transFile, 'transcript');
+
+                    // Upload Other Documents (handles multiple files)
+                    const otherDocs = formData.getAll('custom_other_documents');
+                    for (let i = 0; i < otherDocs.length; i++) {
+                        const url = await uploadToSupabase(otherDocs[i], `other_${i}`);
+                        if (url) otherDocsUrls.push(url);
+                    }
+                } catch (err) {
+                    console.error("File upload process failed:", err);
+                }
+
+                const payload = {
+                    first_name: formData.get('first_name'),
+                    last_name: formData.get('last_name'),
+                    email: formData.get('email'),
+                    mobile_no: formData.get('mobile_no'),
+
+                    custom_address_: formData.get('custom_address_'),
+                    custom_city: formData.get('custom_city'),
+                    custom_preferred_language_of_communication: formData.get('custom_preferred_language_of_communication'),
+
+                    // Custom fields mapped to Frappe DocType layout
+                    custom_pathway: formData.get('custom_pathway'),
+                    custom_do_you_have_a_degree: formData.get('custom_do_you_have_a_degree'),
+                    custom_do_you_have_3_passes_in_a_level_in_one_sitting: formData.get('custom_do_you_have_3_passes_in_a_level_in_one_sitting'),
+                    custom_do_you_have_a_gpa_of_28_or_above_or_second_class_upper: formData.get('custom_do_you_have_a_gpa_of_28_or_above_or_second_class_upper'),
+                    custom_do_you_have_german_language: formData.get('custom_do_you_have_german_language'),
+                    custom_do_you_have_ielts_60_or_above__can_archive_60: formData.get('custom_do_you_have_ielts_60_or_above__can_archive_60'),
+                    custom_funding_capacity: formData.get('custom_funding_capacity'),
+
+                    // Pass the public Supabase storage URLs to the worker
+                    custom_cv: cvUrl,
+                    custom_transcript: transcriptUrl,
+                    custom_other_documents: otherDocsUrls.length > 0 ? otherDocsUrls.join(', ') : null
+                };
+
+                try {
+                    const headers = {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    };
+
+                    if (USE_API_AUTH) {
+                        headers["Authorization"] = `token ${API_KEY}:${API_SECRET}`;
+                    }
+
+                    // Wait for the Cloudflare worker to proxy the request to Frappe
+                    const response = await fetch(FRAPPE_API_URL, {
+                        method: "POST",
+                        headers: headers,
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorTextResponse = await response.text();
+                        console.error("Worker Error Response:", errorTextResponse);
+                        throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    console.log("Success Response:", data);
+
+                    // Success
+                    form.reset();
+                    alertSuccess.style.display = 'flex';
+                    window.scrollTo({ top: document.querySelector('.content-layout').offsetTop - 100, behavior: 'smooth' });
+
+                } catch (error) {
+                    console.error("Frappe CRM Submission Error:", error);
+                    errorText.textContent = `There was a problem submitting your application: ${error.message}. Please try again.`;
+                    alertError.style.display = 'flex';
+                    window.scrollTo({ top: document.querySelector('.content-layout').offsetTop - 100, behavior: 'smooth' });
+                } finally {
+                    // Reset UI
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    spinner.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
