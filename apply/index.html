@@ -603,6 +603,28 @@
                         } catch (ttErr) {
                             console.error("TikTok Edge Function setup error:", ttErr);
                         }
+
+                        // Fire and forget Welcome Email via Supabase Edge Function
+                        try {
+                            const emailEndpoint = `${supabaseUrl}/functions/v1/welcome-email`;
+                            const name = `${formData.get('first_name') || ''} ${formData.get('last_name') || ''}`.trim();
+                            fetch(emailEndpoint, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "Authorization": `Bearer ${supabaseKey}`
+                                },
+                                body: JSON.stringify({
+                                    email: formData.get('email_id'),
+                                    name: name || "Future Student",
+                                    pathway: formData.get('custom_pathway')
+                                })
+                            }).then(res => res.json())
+                                .then(data => console.log('Welcome Email Response:', data))
+                                .catch(err => console.error("Welcome Email network error:", err));
+                        } catch (emailErr) {
+                            console.error("Welcome Email setup error:", emailErr);
+                        }
                     }
 
                 } catch (error) {
