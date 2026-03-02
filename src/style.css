@@ -4,6 +4,42 @@
    GERMAN.LK  —  Design Tokens (Tailwind v4)
    ────────────────────────────────────────────── */
 
+/* ──────────────────────────────────────────────
+   FONTS: NEUE HAAS GROTESK DISPLAY PRO
+   ────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/assetes/neue-haas-grotesk-display-pro/NeueHaasDisplayRoman.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/assetes/neue-haas-grotesk-display-pro/NeueHaasDisplayMediu.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/assetes/neue-haas-grotesk-display-pro/NeueHaasDisplayBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/assetes/neue-haas-grotesk-display-pro/NeueHaasDisplayBlack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-primary: #1A1A2E;
   --color-primary-light: #2A2A4E;
@@ -22,8 +58,8 @@
   --color-border-dark: #2A2A4E;
   --color-gold-glow: rgba(201, 168, 76, .15);
 
-  --font-heading: 'Lexend', sans-serif;
-  --font-body: 'Source Sans 3', sans-serif;
+  --font-heading: 'Neue Haas Grotesk Display Pro', sans-serif;
+  --font-body: 'Neue Haas Grotesk Display Pro', sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
