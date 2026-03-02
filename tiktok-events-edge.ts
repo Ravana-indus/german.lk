@@ -2,7 +2,7 @@ import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 // TikTok Pixel and Token Configuration
 const TIKTOK_ACCESS_TOKEN = "8320314aca74fa6f23433c25b63eb5a656eb76a8";
-const TIKTOK_PIXEL_CODE = "D67I39BC77UA8BRTRP70";
+const TIKTOK_PIXEL_CODE = "D6I604RC77U12IB43AFG";
 const TIKTOK_EVENTS_API_URL = "https://business-api.tiktok.com/open_api/v1.3/event/track/";
 
 const corsHeaders = {
