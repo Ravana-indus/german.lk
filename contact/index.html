@@ -222,9 +222,9 @@
                         <div>
                             <h3>WhatsApp</h3>
                             <p class="text-sm text-text/70 mb-2">Quick responses via chat</p>
-                            <a href="https://wa.me/94741417993" target="_blank"
-                                class="font-bold text-lg text-primary hover:text-secondary block mb-1">+94 74 141
-                                7993</a>
+                            <a href="https://wa.me/94751132642" target="_blank"
+                                class="font-bold text-lg text-primary hover:text-secondary block mb-1">+94 75 113
+                                2642</a>
                             <p class="text-xs text-text/60">Mon - Fri: 9.30 to 6.30 pm</p>
                         </div>
                     </div>
@@ -689,7 +689,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('wa-modal');
-            const triggerBtns = document.querySelectorAll('#whatsapp-trigger, a[href="https://wa.me/94741417993"]');
+            const triggerBtns = document.querySelectorAll('#whatsapp-trigger, a[href="https://wa.me/94751132642"]');
             const closeBtn = document.getElementById('wa-modal-close');
             const backdrop = document.getElementById('wa-modal-backdrop');
             const form = document.getElementById('wa-lead-form');
@@ -700,7 +700,7 @@
             const errorText = document.getElementById('wa-error-text');
 
             const FRAPPE_API_URL = "https://frappe-lead-worker.divine-cell-37a1.workers.dev";
-            const WHATSAPP_NUMBER = "94741417993";
+            const WHATSAPP_NUMBER = "94751132642";
 
             // Open Modal
             triggerBtns.forEach(btn => {
@@ -720,71 +720,55 @@
             backdrop.addEventListener('click', closeModal);
 
             // Handle Submission
-            form.addEventListener('submit', async (e) => {
+            form.addEventListener('submit', (e) => {
                 e.preventDefault();
 
                 submitBtn.disabled = true;
                 btnText.classList.add('invisible');
                 spinner.classList.remove('hidden');
-                errorAlert.classList.add('hidden');
 
                 const formData = new FormData(form);
-
-                const payload = {
+                const data = {
                     first_name: formData.get('first_name'),
                     last_name: formData.get('last_name'),
                     email_id: formData.get('email_id'),
                     mobile_no: formData.get('mobile_no'),
                     custom_pathway: formData.get('custom_pathway'),
-                    title: `WhatsApp Lead: ${formData.get('first_name')} - ${formData.get('custom_pathway')}`,
-                    status: 'Lead',
-                    custom_source_url: window.location.href,
-                    custom_lead_source: 'WhatsApp Button',
-                    // Additional matching CRM fields
-                    custom_do_you_have_a_degree: formData.get('custom_do_you_have_a_degree'),
-                    custom_do_you_have_3_passes_in_a_level_in_one_sitting: formData.get('custom_do_you_have_3_passes_in_a_level_in_one_sitting'),
-                    custom_do_you_have_a_gpa_of_28_or_above_or_second_class_upper: formData.get('custom_do_you_have_a_gpa_of_28_or_above_or_second_class_upper'),
-                    custom_do_you_have_german_language: formData.get('custom_do_you_have_german_language'),
-                    custom_do_you_have_ielts_60_or_above__can_archive_60: formData.get('custom_do_you_have_ielts_60_or_above__can_archive_60'),
-                    custom_funding_capacity: formData.get('custom_funding_capacity')
+                    degree: formData.get('custom_do_you_have_a_degree'),
+                    alevel: formData.get('custom_do_you_have_3_passes_in_a_level_in_one_sitting'),
+                    gpa: formData.get('custom_do_you_have_a_gpa_of_28_or_above_or_second_class_upper'),
+                    german: formData.get('custom_do_you_have_german_language'),
+                    ielts: formData.get('custom_do_you_have_ielts_60_or_above__can_archive_60'),
+                    funds: formData.get('custom_funding_capacity')
                 };
 
-                let waMessage = `Hi German.lk team! My name is ${payload.first_name}. I am interested in ${payload.custom_pathway}. Can you guide me?`;
-                let waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+                const waMessage = `Hi German.lk team! I am interested in ${data.custom_pathway}.
 
-                try {
-                    const response = await fetch(FRAPPE_API_URL, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(payload)
-                    });
+My Profile:
+- Name: ${data.first_name} ${data.last_name}
+- Email: ${data.email_id}
+- Phone: ${data.mobile_no}
+- Pathway: ${data.custom_pathway}
+- Degree: ${data.degree}
+- A/Level 3 Passes: ${data.alevel}
+- GPA 2.8+ / 2nd Lower: ${data.gpa}
+- Know German: ${data.german}
+- IELTS 6.0+: ${data.ielts}
+- Funding Capacity: ${data.funds}`;
 
-                    if (!response.ok) {
-                        console.warn("Frappe CRM captured with warnings:", await response.text());
-                    } else {
-                        // Success -> get the lead link and append it to message
-                        const resultData = await response.json();
-                        const leadId = resultData.data ? resultData.data.name : (resultData.name || "");
-                        if (leadId) {
-                            waMessage += `\n\nMy Lead Profile: https://admin.german.lk/app/crm-lead/${leadId}`;
-                            waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
-                        }
-                    }
+                const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
-                } catch (error) {
-                    console.error("WhatsApp Lead Capture Error (Gracefully bypassed):", error);
-                } finally {
-                    form.reset();
-                    closeModal();
+                // Reset and close
+                form.reset();
+                closeModal();
 
-                    window.open(waUrl, '_blank');
+                // Open WhatsApp
+                window.open(waUrl, '_blank');
 
-                    submitBtn.disabled = false;
-                    btnText.classList.remove('invisible');
-                    spinner.classList.add('hidden');
-                }
+                // Restore button state
+                submitBtn.disabled = false;
+                btnText.classList.remove('invisible');
+                spinner.classList.add('hidden');
             });
         });
     </script>
